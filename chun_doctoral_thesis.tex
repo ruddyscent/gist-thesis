@@ -1,0 +1,260 @@
+% -*- coding: utf-8 -*-
+%
+% Kyungwon Chun <ruddyscent@gmail.com>
+%
+
+\documentclass{gist}
+
+% Place floats(figures and tables) on a separate page.
+\makeatletter
+\@fpsep\textheight
+\makeatother
+
+\makeindex
+
+\input epsf %temporarily inserted for printing figures
+\def\putepsf#1{\centering \parbox{12cm}{\epsfxsize = 12cm \epsfbox{#1}}}
+%temporarily inserted for printing figures
+%-----------------------------------------------------------------------
+% Department(, School, or Program) code list
+% SIC - School of Information and Communications
+% SM -  School of Mechatronics
+% MSE - School of Materials Science and Engineering
+% SLS - School of Life Science
+% DNME - Department of Nanobio Materials and Electronics
+% PAP - Graduate Program of Photonics and Applied Physics
+% SMSE - School of Medical System Engineering
+% Department code
+% Modify if you are not SIC.
+\code{{D/}SIC}
+
+%-----------------------------------------------------------------------
+% Thesis title in English
+% Insert \titlebreak where lines are to be separated.  Do not use the LaTeX command '\\'.
+\etitle{A flexible free-software package for FDTD algorithm and its application to photonics simulation}
+
+%-----------------------------------------------------------------------
+% Thesis title in Korean
+% Insert \titlebreak where lines are to be separated.  Do not use the LaTeX command '\\'.
+\ktitle{기능 확장이 용이한 FDTD 전산모사 프로그램의 개발 및 이를 활용한 광자공학 모의실험}
+
+%-----------------------------------------------------------------------
+% Advisor's name in English without a position such as 'Prof.'.
+\advisor{Youngjoo Chung}
+
+%-----------------------------------------------------------------------
+% Advisor's name in Korean without a position such as 'Prof.'.
+\kadvisor{정영주}
+
+%-----------------------------------------------------------------------
+% Co-advisor's name in English
+% In case there is no co-advisor, comment out the following line with a "%" in the front.
+%\coadvisor{}
+
+%-----------------------------------------------------------------------
+% Name of the author in English
+\ename{Kyungwon Chun}
+
+%-----------------------------------------------------------------------
+% Name of the author in Korean separated with '{}'.
+\kname{{전}{경}{원}}
+
+%-----------------------------------------------------------------------
+% Student ID of the author
+\studentid{20046007}
+
+%-----------------------------------------------------------------------
+% The year of graduation (ex. 1999)
+\coveryear{2013}
+
+%-----------------------------------------------------------------------
+% The date signed by the advisor.  The first is the month, second the date, and third the year.
+\advisorsigndate{December}{5}{2012}
+
+%-----------------------------------------------------------------------
+% The date signed by the referees.  The first is the month, second the date, and third the year.
+\refereesigndate{December}{5}{2012}
+
+%-----------------------------------------------------------------------
+% Names of the referees in English
+% For Master's thesis, input the names of the three referees (referee A through referee C) in full.
+% For Ph.D thesis, input the names of the five referees (referee A through referee E) in full.
+% For most cases, referee A is the same as the advisor.
+\refereeA{Prof. Youngjoo Chung}
+\refereeB{Prof. Moongu Jeon}
+\refereeC{Prof. Sung Chan Jun}
+\refereeD{Dr. Il-Bum Kwon} % For M.S thesis comment out this line.
+\refereeE{Dr. Pramod R. Watekar} % For M.S thesis comment out this line.
+
+%-----------------------------------------------------------------------
+% This is the beginning of the thesis.
+
+\dedication{Dedicated to my family.}
+
+\begin{document}
+
+%-----------------------------------------------------------------------
+% Abstract of the thesis in English.
+% Insert the abstract between \begin{eabstract} and \end{eabstract}.
+% You can either write the abstract directly here or import a file using the \input command.
+\begin{eabstract}
+\input content/eabst.tex
+\end{eabstract}
+
+%-----------------------------------------------------------------------
+% Abstract of the thesis in Korean.
+% Insert the abstract between \begin{kabstract} and \end{kabstract}.
+% You can either write the abstract directly here or import a file using the \input command.
+\begin{kabstract}
+\input content/kabst.tex
+\end{kabstract}
+
+%-----------------------------------------------------------------------
+% Acknowledgements
+% Insert the text between \begin{acknowledgements} and \end{acknowledgements}.
+% You can either write the abstract directly here or import a file using the \input command.
+\begin{acknowledgements}
+\input content/ack.tex
+\end{acknowledgements}
+
+%-----------------------------------------------------------------------
+% Table of contents, list of tables and list of figures.
+% Use the \makecontents command to automatically generate the table of content
+\makecontents
+% In case there is no table, comment out the following line.
+\listtables
+% In case there is no figure, comment out the following line.
+\listfigures
+
+%-----------------------------------------------------------------------
+% Input the thesis files written in LaTeX.
+% The \begin{document} command is not necessary here.
+% Reference and vitae will follow the main thesis text.
+%-----------------------------------------------------------------------
+% This is the beginning of the main thesis body.
+% Insert Chapter or section or subsection as many as you need.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DO NOT DELETE FOLLOWING TWO LINES! %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\chapter{Introduction}
+\label{ch:intro}
+\input content/intro.tex
+
+\chapter{GMES: A Python package for solving Maxwell's equations using the FDTD method}
+\label{ch:oop_fdtd}
+\input content/oop_fdtd.tex
+
+\chapter{PLRC and ADE implementations of Drude-critical point model for the FDTD method}
+\label{ch:dcp}
+\input content/dcp.tex
+
+\chapter{Examples of GMES}
+\label{ch:example}
+\input content/example.tex
+
+\chapter{Summary}
+\label{ch:summary}
+\input content/summary.tex
+
+\appendix
+\chapter{How to get GMES}
+\label{ch:get_gmes}
+\input content/get_gmes.tex
+
+%-----------------------------------------------------------------------
+% This is the end of the main thesis body.
+
+%-----------------------------------------------------------------------
+% Input the list of references.
+\bibliographystyle{plainnat}
+%% \bibliographystyle{abbrvnat}
+%% \bibliographystyle{unsrtnat}
+\bibliography{chun_doctoral_thesis}
+
+\printindex
+
+%-----------------------------------------------------------------------
+% Input the curriculum vitae.
+% You may add as many lines as you need using the syntax of the \item command shown below.
+%-----------------------------------------------------------------------
+\birthday{September}{23}{1977} 
+\birthplace{Gunsan, Jeollabuk-do, Republic of Korea} 
+\addr{123 Cheomdan-gwagiro, Buk-gu, Gwangju, 500-712, Republic of Korea}
+
+\vitae
+\begin{education}{2cm}
+\item[2004.03--2013.02] Information and Communications, Gwangju Institute of Science and Technology (Ph.D.)
+\item[2001.03--2004.02] Information and Communications, Gwangju Institute of Science and Technology (M.Sc.)
+\item[1996.03--2001.02] Physics, Chung-Ang University (B.S.)
+\end{education}
+
+% Insert experience if you have.
+\begin{experience}{2cm}
+\item[2011.09--2011.12] T.A.~of General Physics II (GIST College)
+\item[2009.03--2009.06] T.A.~of Fiber Optics (GIST)
+\item[2008.09--2008.12] T.A.~of Advanced Engineering Analysis (GIST)
+\item[2008.09--2009.09] Center for Extreme Light Applications (CELA) - NCRC
+\item[2003.08--2009.12] Development of semantic grid middleware and business grid technology, Grid Middleware Center (GMC), ITRC
+\item[2002.07--2002.12] Development of integrated operation technologies for the optical communications testbed, Ultrafast Fiber-Optic Networks Research Center
+\end{experience}
+
+% Insert activity if you have.
+% \activity
+%Activity Activity Activity Activity Activity Activity Activity Activity
+
+% Insert awards if you have.
+\begin{award}
+\item Who's Who in Science and Engineering 2011-2012 (11th Edition)
+\end{award}
+
+\begin{publication}{2cm}
+
+\item[]\hspace{-\labelwidth}\hspace{-\labelsep}\textbf{Computer software}:
+\item[1.] \textbf{K. Chun}, GMES (GIST, 2006).
+\item[2.] \textbf{K. Chun}, bigboy (GIST, 2002).
+
+\item[]\hspace{-\labelwidth}\hspace{-\labelsep}\textbf{Translations}:
+\item[1.] 조지 T. 하인만, 게리 폴리케, 스탠리 셀코, \textit{``사전처럼 바로 찾아 쓰는 알고리즘,''} (한빛미디어(주), 2010).
+
+\item[]\hspace{-\labelwidth}\hspace{-\labelsep}\textbf{Book chapters}:
+\item[1.] \textbf{K. Chun}, H. Kim, H. Hong, and Y. Chung, ``Object-Oriented Implementation of the Finite-Difference Time-Domain Method in Parallel Computing Environment,'' in {\textit Future Application and Middleware Technology on e-Science,} O.-H. Byeon, J. H. Kwon, T. Dunning, K. W. Cho, and A. Savoy-Navarro, (Springer US, 2010), pp. 137–145.
+
+\item[]\hspace{-\labelwidth}\hspace{-\labelsep}\textbf{Journals}:
+\item[1.] \textbf{K. Chun}, H. Kim, H. Kim, K.-S. Jung, and Y. Chung, ``GMES: A Python package for solving Maxwell's equations using FDTD method,'' \textit{Compupter Physics Communications}, in press.
+\item[2.] \textbf{K. Chun}, H. Kim, H. Kim, and Y. Chung, ``PLRC and ADE implementations of Drude-critical point dispersive model for the FDTD method,'' \textit{Progress In Electromagnetics Research}, 135, 373–390 (2013).
+\item[3.] Y.-E. Im, \textbf{K. Chun}, H. Kim, D.-H. Kim, S. Hann, Y. Chung, and C.-S. Park, ``Comparative study of Raman fiber laser in symmetrical and asymmetrical cavities,'' \textit{Optical Engineering} 49, 091008 (2010).
+
+\item[]\hspace{-\labelwidth}\hspace{-\labelsep}\textbf{International conferences}:
+\item[1.] H. Kim, \textbf{K. Chun}, H. Kim, K. S. Jung, and Y. Chung, ``Concept and Design of an eScience Research Environment Based on a Private Cloud,'' in \textit{The 6th International Conference on Ubiquitous Information Technologies \& Applications} (2011), pp. 56–61.
+\item[2.] \textbf{K. Chun}, H. Kim, H. P. Hong, and Y. Chung, ``Object-Oriented Implementation of the Finite-Difference Time-Domain Method in Parallel Computing Environment,'' in \textit{Korea e-Science AHM} (2008), p. 80.
+\item[3.] \textbf{K. Chun}, H. Kim, T. Kim, and Y. Chung, ``Python Implementation of the Finite-Difference Time-Domain Method,'' in \textit{High Performance Computing International Workshop Program} (2008).
+\item[4.] H. Kim, \textbf{K. Chun}, K. S. Jung, and Y. Chung, ``Web-Based Interface Architecture for the Improvement of Accessibility to Computational Resources on a Cluster System,'' in \textit{Conference Program CIT2007} (2007), pp. 218–222.
+\item[5.] \textbf{K. Chun}, H. Kim, K. S. Jung, and Y. Chung, ``Parallel Implementation of the Finite-Difference Time-Domain Method on Cluster Environment,'' in \textit{Conference Program CIT2006} (2006), p. 074.
+\item[6.] \textbf{K. Chun}, H. Kim, J. Goo, and Y. Chung, ``FDTD Simulation of the Nano-Scale Bent Plasmon Waveguide Structure,'' in \textit{Proceeding of International Conference on Nanoscience and Nanotechnology} (2005), p. 178.
+\item[7.] \textbf{K. Chun} and Y. Chung, ``Parallel Implementation of the Finite-Difference Time-Domain (FDTD) Method for a Plasmon Waveguide Simulation,'' in \textit{9th Optoelectronics and Communications Conference Technical Digest} (2004), pp. 368–369.
+
+
+\item[]\hspace{-\labelwidth}\hspace{-\labelsep}\textbf{Domestic conferences}:
+\item[1.] \textbf{K. Chun}, H. Kim, and Y. Chung, ``Implementation of the Finite-Difference Time-Domain Method in Object-Oriented Programing Using Piecewise Update Scheme,'' in \textit{제36회 한국정보처리학회 추계학술발표대회 논문집} (사단법인 한국정보처리학회, 2011), pp. 1358–1360.
+\item[2.] H. Kim, \textbf{K. Chun}, H. Kim, and Y. Chung, ``Design and Implementation of Web-Oriented Parallel Problem Solving Environment for e-Science,'' in \textit{제 32회 한국정보처리학회(KIPS) 추계학술발표대회 논문집} (Korea Information Processing Society, 2009), Vol. 16, pp. 229–230.
+\item[3.] H. Kim, \textbf{K. Chun}, H. Kim, H. Hong, and Y. Chung, ``A Study on the Communication Performance Improvement of the Parallel Finite-Different Time-Domain Simulator by using the MPI Persistent Communication,'' in \textit{제 31회 한국정보처리학회(KIPS) 춘계학술발표대회 논문집} (Korea Information Processing Society, 2009), Vol. 16, pp. 942–945.
+\item[4.] \textbf{K. Chun}, H. Kim, H. Hong, H. Kim, and Y. Chung, ``Execution speed enhancement of the parallel finite-difference time-domain simulation program using one-sided communication of MPI,'' in \textit{한국 정보과학회 Hpc 연구회 동계 학술 발표대회 논문집} (한국정보과학회, 2009), pp. 107–110.
+\item[5.] \textbf{K. Chun}, H. Kim, H. Hong, and Y. Chung, ``A Bragg-Grating-Shaped High-pass Filter of Photonic crystal Waveguides,'' in \textit{Proceeding of Photonics Conference 2008} (2008).
+\item[6.] H.-M. Kim, \textbf{K. Chun}, H. Kim, and Y. Chung, ``Modeling of heat transfer on the fiber surface for fabrication of long-period fiber gratings using CO2 laser,'' in \textit{Proceedings of the Optical Society of Korea Annual Meeting 2008} (Optical Society of Korea, 2008), pp. 253–254.
+\item[7.] H. Kim, \textbf{K. Chun}, K. S. Jung, and Y. Chung, ``Study on the Web-Based Interface Architecture for the Improvement of Accessibility to Computational Resources,'' in \textit{대한전자공학회 추계종합학술대회 논문집} (The Institute of Electronics Engineers of Korea, 2006), Vol. 29, pp. 946–949.
+\item[8.] J. Goo, \textbf{K. Chun}, and Y. Chung, ``3-D Simulation of a Subwavelength Plasmon Switch with Modified T-structure,'' in \textit{Proceeding of Photonics Conference 2004} (Optical Society of Korea, 2004), p. F2D4.
+\item[9.] \textbf{K. Chun} and Y. Chung, ``Parallel Implementation of the Finite-Difference Time-Domain Method for a Plasmon Waveguide,'' in \textit{Proceeding of Optical Society of Korea Annual Meeting} (Optical Society of Korea, 2004), pp. 108–109.
+\item[10.] K. H. Hwang, G. H. Song, C. Lim, S. Kim, and \textbf{K.-W. Chun}, ``Channel Add/Drop Filters in Two-Dimensional Photonic-Crystal Structures Based on Triangular-Lattice Holes,'' in \textit{Proceeding of Photonics Conference 2002} (Optical Society of Korea, 2002), pp. 401–402.
+
+\item[]\hspace{-\labelwidth}\hspace{-\labelsep}\textbf{Magazines}:
+\item[1.] \textbf{전경원}, ``자유소프트웨어를 이용한 FDTD 시뮬레이터 개발기,'' \textit{마이크로 소프트웨어} 332–336 (2003).
+
+\end{publication}
+
+%-----------------------------------------------------------------------
+% This is the end of the thesis.
+%
+\end{document}

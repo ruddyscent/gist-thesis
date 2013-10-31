@@ -1,0 +1,77 @@
+% -*- coding: utf-8 -*-
+%
+% Kyungwon Chun <ruddyscent@gmail.com>
+%
+
+\section{How to get GMES}
+GMES is owned by GIST\footnote{\url{www.gist.ac.kr}} and licensed under GPLv3\footnote{\url{http://www.gnu.org/licenses/quick-guide-gplv3.html}}. You can download the distribution file from GMES project page\footnote{\url{http://sourceforge.net/projects/gmes}}. GMES project provides a mailing-list, \emph{gmes-user} and forums. General questions about using gmes are recommended to use the mailing-list. For the other questions, feel free to contact the authors\footnote{\href{mailto:ruddyscent@gmail.com}{ruddyscent@gmail.com}}. Any contribution are welcomed.
+
+\section{Installation and use of GMES}
+You can find the installation instruction at the README file in GMES distribution. Though GMES tries to support various platform, the recent version of GMES only test on Ubuntu/Linux. All of the prerequisites of GMES are provided in Debian/Linux and Ubuntu/Linux distributions.
+
+The current version of GMES, does not have a separate user manual. Please, refer this thesis and built-in Python help system.
+
+\section{The file map of GMES distribution}
+The list up of files in GMES distribution in this section is to deliver a information to the developer who wants to enhance a particular function. He/She may find an idea of where in the code each function is carried out, then go straight to the relevant part of the code.
+
+\begin{itemize}
+\item COPYING: license agreement
+\item examples: Examples of the use of the GMES package, see README for details.
+\item gmes/: Top level package
+  \begin{itemize}
+    \item fdtd.py: fdtd module which provide various simulation classes suitable for 1, 2, and 3 dimensions.
+    \item file\_io.py: file\_io module which provides classes related to the file I/O.
+    \item geometry.py: geometry module which provide coordinate and geometric primitives.
+    \item \_\_init\_\_.py: initializes the GMES package.
+    \item pw\_source.py: pw\_source module about source update mechanism
+    \item show.py: show module which provides classes for display of EM fields and geometrical structures.
+    \item source.py: source module to define the input sources
+  \end{itemize}
+\item README: Compile \& installation instructions
+\item setup.py: Setup script using the Distutils
+\item src/: C\verb!++! \& Cython source directory
+  \begin{itemize}
+    \item constant.cc: C\verb!++! source code of the constant module which defines physical and simulation constants
+    \item constant.hh: C\verb!++! header of the constant module
+    \item constant.i: SWIG interface file for the constant module
+    \item material.pyx: Cython source of the material module which defines the propagating medium
+    \item numpy.i: SWIG interface file for NumPy arrays
+    \item pw\_const.cc: C\verb!++! source code for the update mechanism of `Const' medium
+    \item pw\_const.hh: C\verb!++! header for the update mechanism of `Const' medium
+    \item pw\_cpml.cc: C\verb!++! source code for the update mechanism of `Cpml' medium
+    \item pw\_cpml.hh: C\verb!++! header for the update mechanism of `Cpml' medium
+    \item pw\_dcp.cc: C\verb!++! source code for the update mechanism of `Dcp' medium
+    \item pw\_dcp.hh: C\verb!++! header for the update mechanism of `Dcp' medium
+    \item pw\_dielectric.cc: C\verb!++! source code for the update mechanism of 'Dielectric' medium
+    \item pw\_dielectric.hh: C\verb!++! header for the update mechanism of `Dielectric' medium
+    \item pw\_drude.cc: C\verb!++! source code for the update mechanism of `Drude' medium
+    \item pw\_drude.hh: C\verb!++! header for the update mechanism of `Drude' medium
+    \item pw\_dummy.cc: C\verb!++! source code for the update mechanism of `Dummy' medium
+    \item pw\_dummy.hh: C\verb!++! header for the update mechanism of `Dummy' medium
+    \item pw\_lorentz.cc: C\verb!++! source for the update mechanism of `Lorentz' medium
+    \item pw\_lorentz.hh: C\verb!++! header for the update mechanism of `Lorentz' medium
+    \item pw\_material.cc: C\verb!++! source of the base template class for `PwMaterial' type
+    \item pw\_material.hh: C\verb!++! header of the base template class for `PwMaterial' type
+    \item pw\_material.i: A SWIG interface file for the pw\_material module
+    \item pw\_upml.cc: C\verb!++! source for the update mechanism of `Cpml' medium
+    \item pw\_upml.hh: C\verb!++! header for the update mechanism of `Cpml' medium
+    \item pygeom.pyx: A Cython source code of the pygeom module which provides the geometric primitives
+  \end{itemize}
+\item tests/: unit testing files
+  \begin{itemize}
+    \item pw\_const\_test.py: A testing file for classes in the pw\_const module
+      \item pw\_cpml\_test.py: A testing file for classes in the pw\_cpml module
+      \item pw\_dcp\_test.py: A testing file for classes in the pw\_dcp module
+      \item pw\_dielectric\_test.py: A testing file for classes in the pw\_dielectric module
+      \item pw\_drude\_test.py: A testing file for classes in the pw\_drude module
+      \item pw\_dummy\_test.py: A testing file for classes in the pw\_dummy module
+      \item pw\_lorentz\_test.py: A testing file for classes in the pw\_lorentz module
+      \item pw\_upml\_test.py: A testing file for classes in the pw\_upml module
+  \end{itemize}
+\item utils/: miscellaneous utility files
+  \begin{itemize}
+  \item combine.py: Combine the divided npy files.
+  \item dia\_util.py: A Dia module to generate a class diagram for GMES.
+  \end{itemize}
+\item VERSION: Indicates the current version number.
+\end{itemize}
